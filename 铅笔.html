@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: skyblue;
+    }
+
+    .pencil {
+      display: flex;
+      width: 50em;
+      height: 3.5em;
+      font-size: 12px;
+    }
+
+    .taper {
+      width: 4em;
+    }
+
+    .taper::after,
+    .taper::before {
+      content: "";
+      position: absolute;
+      border-style: solid;
+      border-width: calc(3.5em / 2) 4em calc(3.5em / 2) 0;
+      border-color: transparent;
+    }
+    .taper::before {
+      border-right-color: burlywood;
+    }
+    .taper::after {
+      border-right-color: black;
+      transform-origin: left;
+      transform: scale(0.3);
+    }
+
+    .barrel {
+      width: 40em;
+      background-color: green;
+    }
+
+    .eraser {
+      position: relative;
+      width: 6em;
+      background-color: lightpink;
+    }
+
+    .barrel {
+      border-top: 1em solid forestgreen;
+      border-bottom: 1em solid darkgreen;
+      color: silver;
+      line-height: 1.5em;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+
+    .eraser {
+      border-top: 1em solid pink;
+      border-bottom: 1em solid lightcoral;
+      border-radius: 0 0.5em 0.5em 0;
+    }
+
+    .eraser::before {
+      content: "";
+      position: absolute;
+      width: 1.5em;
+      height: 1.5em;
+      background-color: silver;
+      border-top: 1em solid lightgray;
+      border-bottom: 1em solid gray;
+      top: -1em;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center; color: green">铅笔</h1>
+  <figure class="pencil">
+    <span class="taper"></span>
+    <span class="barrel">THINK DEFFERENT</span>
+    <span class="eraser"></span>
+  </figure>
+</body>
+</html>
